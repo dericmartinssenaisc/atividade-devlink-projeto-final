@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* para que o padding e a borda não aumentem o tamanho do elemento */
+}
+
+:root {
+    --text-color: #ffffff;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.05);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/moon.svg);
+    --box-shadow-color: rgba(255, 255, 255, 0.25);
+}
+
+.light {
+    --text-color: #000000;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(255, 255, 255, 0.2);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+    --box-shadow-color: rgba(0, 0, 0, 0.10);
+}
+
+
+               
+body {
+
+    background: var(--bg-url) no-repeat center top/cover;
+    height: 100vh; /* altura total da tela */
+
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+
+#container {
+    width: 100%;
+    max-width: 588px; /* largura máxima do container */
+    padding: 0 24px; /* espaçamento interno */
+    margin:56px auto; /* margem superior de 56px, margem inferior automática, margem esquerda e direita automática */
+    /*height: 712px; */
+
+    /*
+    margin-left: auto;
+    margin-right: auto;
+    */
+
+    /*border: solid 1px red; /* borda vermelha para visualizar o container */
+    /*padding-top: 56px; /* espaçamento entre o topo da página e o conteúdo */
+}
+
+#profile {
+    text-align: center; /* centraliza o conteúdo do perfil */
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px;
+   /* display: block; remove o espaço embaixo da imagem, transforma em block a tag */
+   /* margin: auto; centraliza a imagem horizontalmente */
+}
+
+#profile p {
+    font-size: 16px; /* tamanho da fonte */
+    font-weight: 700; /* peso da fonte */
+    line-height: 24px; /* altura da linha */
+    padding: 8px;
+}
+
+/* Botão de troca de tema */
+#switch {
+    width: 64px;
+    position: relative;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    transform: translateY(-50%);
+    top: 50%;
+    animation: slide-back 0.3s forwards;
+}
+
+#switch span {
+   display: block; 
+   width: 64px;
+   height: 24px;
+   border: solid 1px var(--stroke-color);
+   background: var(--surface-color);
+   border-radius: 9999px;
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+}
+
+.light #switch button {
+    animation: slide-in 0.3s forwards;
+}
+
+#switch button:hover {
+  
+    outline: 8px solid var(--highlight-color);
+}
+
+/* Links */
+
+ul {
+    list-style: none; /* remove os marcadores da lista */
+    display: flex; /* exibe os itens da lista em linha */
+    flex-direction: column; /* exibe os itens da lista em coluna */
+    gap: 16px; /* espaçamento entre os itens da lista */
+    padding: 24px 0;
+}
+
+ul li a {
+    display: flex; /* exibe os itens da lista em linha */
+    align-items: center; /* alinha os itens da lista verticalmente */
+    justify-content: center; /* alinha os itens da lista horizontalmente */
+    padding: 16px 24px; /* espaçamento interno */
+    background: var(--surface-color); /* cor de fundo com transparência */
+    border: 1px solid var(--stroke-color); /* borda com transparência */
+    border-radius: 8px; /* borda arredondada */
+    backdrop-filter: blur(4px); /* desfoca o fundo */
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: none; /* remove o sublinhado do link */
+    font-weight: 500; /* peso da fonte */
+    font-size: 16px;
+    transition: background 0.2s ease, border 0.3s ease; /* transição suave para o fundo e borda */
+}   
+
+
+/* Links ao passar o mouse  pseudo-selector */
+ul li a:hover {
+    background: var(--surface-color-hover); /* cor de fundo com transparência ao passar o mouse */
+    border: 1.5px solid var(--text-color ); /* borda com transparência ao passar o mouse */
+}
+
+/* Ícones de redes sociais */
+
+#social-icons {
+    display: flex; /* exibe os ícones em linha */
+    justify-content: center; /* alinha os ícones horizontalmente */
+   /* gap: 16px; /* espaçamento entre os ícones */
+    padding: 24px; /* espaçamento interno */
+    font-size: 24px;
+}
+
+
+#social-icons a {
+    display: flex;  /* exibe os ícones em linha */
+    align-items: center;    /* alinha os ícones verticalmente */
+    justify-self: center; /* alinha os ícones horizontalmente */  
+    padding: 16px; /* espaçamento interno */
+    border-radius: 50%; /* borda arredondada */
+    transition: background 0.2s; /* transição suave para o fundo */
+}
+
+#social-icons a:hover {
+    background: var(--highlight-color); /* cor de fundo com transparência ao passar o mouse */
+}
+
+footer {
+    display: flex;
+    padding: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media (min-width: 700px) {
+    :root {
+        --bg-url: url(./assets/bg-desktop.jpg);
+    }
+
+    .light {
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        left:0;
+    }
+    to {
+        left:50%;
+    } 
+}
+
+@keyframes slide-back {
+    from {
+        left:50%;
+    }
+    to {
+        left:0;
+    }
+}
