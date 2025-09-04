@@ -8,7 +8,7 @@
     --text-color: #ffffff;
     --bg-url: url(./assets/bg-mobile.jpg);
     --stroke-color: rgba(255, 255, 255, 0.5);
-    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color: rgba(213, 25, 25, 0.696);
     --surface-color-hover: rgba(255, 255, 255, 0.05);
     --highlight-color: rgba(255, 255, 255, 0.2);
     --switch-bg-url: url(./assets/moon.svg);
@@ -19,8 +19,8 @@
     --text-color: #000000;
     --bg-url: url(./assets/bg-mobile-light.jpg);
     --stroke-color: rgba(0, 0, 0, 0.5);
-    --surface-color: rgba(0, 0, 0, 0.05);
-    --surface-color-hover: rgba(255, 255, 255, 0.2);
+    --surface-color: rgba(25, 199, 31, 0.05);
+    --surface-color-hover: rgba(20, 172, 207, 0.2);
     --highlight-color: rgba(0, 0, 0, 0.1);
     --switch-bg-url: url(./assets/sun.svg);
     --box-shadow-color: rgba(0, 0, 0, 0.10);
@@ -146,7 +146,7 @@ ul li a {
 /* Links ao passar o mouse  pseudo-selector */
 ul li a:hover {
     background: var(--surface-color-hover); /* cor de fundo com transparência ao passar o mouse */
-    border: 1.5px solid var(--text-color ); /* borda com transparência ao passar o mouse */
+    border: 5px solid var(--text-color ); /* borda com transparência ao passar o mouse */
 }
 
 /* Ícones de redes sociais */
